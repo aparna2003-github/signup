@@ -72,22 +72,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     
         // Insert user data into the user table
-        $sql = "INSERT INTO users (first_name, last_name, email, dob, password) 
+       $sql = "INSERT INTO users (first_name, last_name, email, dob, password) 
                 VALUES ('$firstName', '$lastName', '$email', '$dob', '$hashedPassword')";
-    
-        if ($conn->query($sql) === TRUE) {
-            echo "Sign up successful!";
+
+       if ($conn->query($sql) === TRUE) {
+            $_SESSION['signup_success'] = true; // Set session variable for signup success
+             header("Location: login.html"); // Redirect to login page
+             exit();
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
-    } else {
-        // If there are validation errors, display them to the user
-        foreach ($errors as $error) {
-            echo $error . "<br>";
-        }
-    }
+           echo "Error: " . $sql . "<br>" . $conn->error;
+                }
+        } else {
+                 // If there are validation errors, display them to the user
+          foreach ($errors as $error) {
+          echo $error . "<br>";
+          }
+   }
     
     // Close connection
-    $conn->close();
+    $conn->close(); 
+    //     if ($conn->query($sql) === TRUE) {
+    //         echo "Sign up successful!";
+    //     } else {
+    //         echo "Error: " . $sql . "<br>" . $conn->error;
+    //     }
+    // } else {
+    //     // If there are validation errors, display them to the user
+    //     foreach ($errors as $error) {
+    //         echo $error . "<br>";
+    //     }
+    // }
+    
+    // // Close connection
+    // $conn->close();
  
 ?>
