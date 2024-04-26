@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Issue Questionnaire</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Skin Issue Questionnaire</h2>
+        <form action="process.question.php" method="post">
+            <div class="form-group">
+                <label for="skin-type">1. How would you describe your skin type?</label>
+                <select name="skin-type" id="skin-type">
+                    <option value="Dry">Dry</option>
+                    <option value="Oily">Oily</option>
+                    <option value="Combination">Combination</option>
+                    <option value="Normal">Normal</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="skin-concerns">2. Do you have any specific skin concerns?</label>
+                <select name="skin-concerns" id="skin-concerns">
+                    <option value="Acne">Acne</option>
+                    <option value="Dryness">Dryness</option>
+                    <option value="Oiliness">Oiliness</option>
+                    <option value="Sensitive">Sensitive</option>
+                    <option value="Aging">Aging</option>
+                    <option value="Hyperpigmentation">Hyperpigmentation</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="breakouts">3. How often do you experience breakouts?</label>
+                <select name="breakouts" id="breakouts">
+                    <option value="Rarely">Rarely</option>
+                    <option value="Occasionally">Occasionally</option>
+                    <option value="Frequently">Frequently</option>
+                    <option value="Almost daily">Almost daily</option>
+                    <option value="Never">Never</option>
+                </select>
+            </div>
+            <!-- <div class="form-group">
+                <label>4. Are you currently using any skincare products? If yes, please select the type(s).</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="skincare-products[]" id="cleanser" value="Cleanser">
+                    <label for="cleanser">Cleanser</label><br>
+                    <input type="checkbox" name="skincare-products[]" id="moisturizer" value="Moisturizer">
+                    <label for="moisturizer">Moisturizer</label><br>
+                    <input type="checkbox" name="skincare-products[]" id="sunscreen" value="Sunscreen">
+                    <label for="sunscreen">Sunscreen</label><br>
+                    <input type="checkbox" name="skincare-products[]" id="serum" value="Serum">
+                    <label for="serum">Serum</label><br>
+                    <input type="checkbox" name="skincare-products[]" id="toner" value="Toner">
+                    <label for="toner">Toner</label><br>
+                    <input type="checkbox" name="skincare-products[]" id="exfoliant" value="Exfoliant">
+                    <label for="exfoliant">Exfoliant</label><br>
+                    <input type="checkbox" name="skincare-products[]" id="mask" value="Mask">
+                    <label for="mask">Mask</label><br>
+                    <input type="checkbox" name="skincare-products[]" id="other" value="Other">
+                    <label for="other">Other</label><br>
+                </div>
+            </div> -->
+            <div class="form-group multi-select">
+                <label for="skincare-products">4. Are you currently using any skincare products? If yes, please select them.</label>
+                <div>
+                    <input type="checkbox" name="skincare-product" value="Cleanser">
+                    <label for="Cleanser">Cleanser</label>
+                    <input type="checkbox" name="skincare-product" value="Moisturizer">
+                    <label for="Moisturizer">Moisturizer</label>
+                    <input type="checkbox" name="skincare-product" value="Sunscreen">
+                    <label for="Sunscreen">Sunscreen</label>
+                    <!-- Add more checkboxes as needed -->
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="sunscreen-usage">5. How often do you wear sunscreen?</label>
+                <select name="sunscreen-usage" id="sunscreen-usage">
+                    <option value="Every day">Every day</option>
+                    <option value="Occasionally">Occasionally</option>
+                    <option value="Rarely">Rarely</option>
+                    <option value="Never">Never</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="skincare-allergies">6. Do you have any allergies to skincare ingredients?</label>
+                <select name="skincare-allergies" id="skincare-allergies">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="routine-rating">7. How would you rate your current skincare routine?</label>
+                <select name="routine-rating" id="routine-rating">
+                    <option value="Poor">Poor</option>
+                    <option value="Fair">Fair</option>
+                    <option value="Good">Good</option>
+                    <option value="Excellent">Excellent</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
